@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jai Jagannath Jena | Portfolio & Resume</title>
+    <meta name="description" content="Portfolio of Jai Jagannath Jena, a B.Tech CSE student at VIT Bhopal specializing in Full-Stack development, Java, C++, and UI/UX design.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* =========================================
+           OXFORD STUDIO: PREMIUM CSS ARCHITECTURE
+           ========================================= */
+
+        :root {
+            --color-primary: #7e74ff;
+            --color-primary-glow: rgba(126, 116, 255, 0.4);
+            --color-secondary: #00d2ff;
+            --color-text-main: #f8f9fa;
+            --color-text-muted: #a0a0ab;
+            --color-background: #09090b;
+            --color-card: #121217;
+            --color-card-hover: #181820;
+            
+            --font-family-primary: 'Inter', system-ui, -apple-system, sans-serif;
+            
+            --glass-bg: rgba(9, 9, 11, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.06);
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            
+            --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        ::selection {
+            background-color: var(--color-primary);
+            color: #fff;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--color-background); }
+        ::-webkit-scrollbar-thumb { background: #2a2a35; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
+
+        body {
+            font-family: var(--font-family-primary);
+            background-color: var(--color-background);
+            color: var(--color-text-main);
+            overflow-x: hidden;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- Navigation --- */
+        header {
+            position: fixed;
+            top: 0; 
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+            transition: var(--transition-smooth);
+        }
+
+        nav {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px 32px;
+        }
+
+        .logo { 
+            font-weight: 800; 
+            font-size: 1.1rem; 
+            letter-spacing: -0.5px; 
+            color: var(--color-text-main);
+            text-transform: uppercase;
+        }
+
+        nav ul { list-style: none; display: flex; gap: 32px; }
+
+        nav ul a { 
+            color: var(--color-text-muted); 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            font-weight: 500; 
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        nav ul a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--color-primary);
+            transition: var(--transition-smooth);
+        }
+
+        nav ul a:hover { color: var(--color-text-main); }
+        nav ul a:hover::after { width: 100%; }
+
+        /* --- Hero Section & Canvas --- */
+        #hero {
+            position: relative;
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            text-align: center; 
+            background: var(--color-background);
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        #hero-canvas {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: auto;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            pointer-events: none; 
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .hero-content h1, .hero-content p, .hero-content span {
+            pointer-events: auto; 
+        }
+
+        .hero-content h1 { 
+            font-size: clamp(2.5rem, 8vw, 5rem); 
+            margin-bottom: 16px; 
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            background: linear-gradient(180deg, #FFFFFF 0%, #A0A0AB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content .tagline { 
+            font-size: clamp(1rem, 3vw, 1.25rem); 
+            color: var(--color-text-muted); 
+            margin-bottom: 32px; 
+            font-weight: 400;
+        }
+
+        /* --- Premium Buttons --- */
+        .hero-buttons {
+            pointer-events: auto; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-main {
+            padding: 12px 28px; 
+            border-radius: 50px; 
+            text-decoration: none;
+            font-weight: 600; 
+            transition: var(--transition-smooth); 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center;
+            font-size: 0.95rem; 
+            border: none; 
+            cursor: pointer;
+            gap: 8px;
+        }
+
+        .btn-primary { 
+            background: var(--color-primary); 
+            color: #ffffff; 
+            box-shadow: 0 4px 20px rgba(126, 116, 255, 0.2);
+        }
+
+        .btn-primary:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 8px 25px var(--color-primary-glow);
+            background: #8b82ff;
+        }
+        
+        .btn-outline { 
+            border: 1px solid var(--glass-border); 
+            color: var(--color-text-main); 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover { 
+            background: #ffffff; 
+            color: #000000; 
+            transform: translateY(-3px);
+        }
+
+        /* --- Section Styling & Scroll Reveal --- */
+        .section-title { 
+            text-align: center; 
+            margin: 100px 0 60px; 
+            font-size: 2.5rem; 
+            font-weight: 800; 
+            letter-spacing: -0.5px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Resume / Professional Path --- */
+        .resume-container {
+            display: grid; 
+            grid-template-columns: 300px 1fr; 
+            gap: 48px;
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 48px;
+            background: var(--color-card); 
+            border-radius: var(--radius-lg); 
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .resume-sidebar h3, .resume-main h3 { 
+            color: var(--color-primary); 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            margin-bottom: 16px; 
+            letter-spacing: 1.5px; 
+            font-weight: 700;
+        }
+
+        .resume-sidebar p { color: var(--color-text-muted); }
+
+        .skill-tag { 
+            background: rgba(255, 255, 255, 0.05); 
+            padding: 6px 14px; 
+            border-radius: 6px; 
+            font-size: 0.8rem; 
+            font-weight: 500;
+            margin: 0 8px 12px 0; 
+            display: inline-block; 
+            border: 1px solid var(--glass-border); 
+            color: var(--color-text-main); 
+            transition: var(--transition-smooth);
+        }
+
+        .skill-tag:hover {
+            border-color: var(--color-primary);
+            background: rgba(126, 116, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* --- Projects Grid --- */
+        .projects-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 24px 100px;
+        }
+
+        .project-card {
+            background: var(--color-card); 
+            border: 1px solid var(--glass-border);
+            padding: 32px; 
+            border-radius: var(--radius-lg); 
+            transition: var(--transition-smooth);
+            display: flex; 
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%);
+            opacity: 0;
+            transition: opacity var(--transition-smooth);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .project-card:hover { 
+            transform: translateY(-8px); 
+            border-color: rgba(126, 116, 255, 0.3); 
+            background: var(--color-card-hover);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-card:hover::before { opacity: 1; }
+        
+        .project-card > * { position: relative; z-index: 1; }
+
+        .project-card i.main-icon { 
+            font-size: 1.8rem; 
+            color: var(--color-primary); 
+            margin-bottom: 24px; 
+        }
+
+        .project-card h3 { 
+            font-size: 1.4rem; 
+            margin-bottom: 12px; 
+            font-weight: 700; 
+            letter-spacing: -0.3px;
+        }
+        
+        .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+
+        .project-tags span { 
+            font-size: 0.7rem; 
+            background: rgba(0, 210, 255, 0.1); 
+            padding: 4px 10px; 
+            border-radius: 4px; 
+            color: var(--color-secondary); 
+            font-weight: 600; 
+            letter-spacing: 0.5px;
+        }
+        
+        .project-card p { 
+            flex-grow: 1; 
+            color: var(--color-text-muted); 
+            font-size: 0.95rem; 
+            margin-bottom: 32px; 
+        }
+
+        /* --- Project Actions --- */
+        .project-actions { display: flex; gap: 12px; align-items: center; }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: var(--radius-md);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            flex: 1;
+        }
+
+        .btn-fill { background: var(--color-text-main); color: var(--color-background); }
+        .btn-fill:hover { background: #ffffff; transform: scale(1.02); }
+
+        .btn-border { border: 1px solid var(--glass-border); color: var(--color-text-main); }
+        .btn-border:hover { border-color: var(--color-text-main); background: rgba(255,255,255,0.05); }
+
+        .badge-locked { 
+            font-size: 0.85rem; color: #777; display: flex; align-items: center; justify-content: center;
+            width: 100%; gap: 8px; padding: 10px 0; font-style: italic; background: rgba(255,255,255,0.02); border-radius: var(--radius-md);
+        }
+
+        /* --- Footer / Contact --- */
+        #contact { padding: 80px 20px 100px; text-align: center; border-top: 1px solid var(--glass-border); }
+        #contact h2 { font-size: 2rem; margin-bottom: 32px; }
+        .social-links { display: flex; justify-content: center; gap: 24px; }
+
+        .social-links a { 
+            display: flex; align-items: center; justify-content: center;
+            width: 50px; height: 50px; border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border);
+            font-size: 1.2rem; color: var(--color-text-muted); transition: var(--transition-smooth); 
+        }
+
+        .social-links a:hover { 
+            color: #fff; background: var(--color-primary); border-color: var(--color-primary);
+            transform: translateY(-5px) scale(1.1); box-shadow: 0 10px 20px var(--color-primary-glow);
+        }
+
+        /* --- Keyframes --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 850px) { 
+            .resume-container { grid-template-columns: 1fr; padding: 32px; } 
+        }
+
+        @media (max-width: 768px) { 
+            nav ul { display: none; } 
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .btn-main { width: 100%; max-width: 250px; }
+            .section-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Jai Jagannath Jena</div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#resume-content">Resume</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <h1>Jai Jagannath Jena</h1>
+            <p class="tagline">B.Tech CSE @ VIT Bhopal • Full-Stack Developer</p>
+            <div style="min-height: 40px; margin-bottom: 32px;">
+                <span id="typing-text" style="color: var(--color-primary); font-weight: 600; font-size: 1.4rem; letter-spacing: -0.5px;"></span>
+            </div>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-main btn-primary">View Projects</a>
+                <a href="JaiJagannathJenaResume.pdf" target="_blank" class="btn-main btn-outline">Resume PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume-content" style="padding: 80px 20px;">
+        <h2 class="section-title reveal">Professional Path</h2>
+        <!-- Resume Container acts as a CSS Grid (Left Sidebar / Right Main) -->
+        <div class="resume-container reveal">
+            
+            <!-- LEFT SIDEBAR -->
+            <div class="resume-sidebar">
+                <h3>Education</h3>
+                <p style="font-weight: 600; font-size: 1rem; color: #fff;">VIT Bhopal University</p>
+                <p style="font-size: 0.85rem; margin-bottom: 32px;">B.Tech in CSE<br>2024 – 2028</p>
+                
+                <h3>Certifications</h3>
+                <p style="font-size: 0.85rem; margin-bottom: 8px;">• DSA (Simplilearn SkillUP)</p>
+                <p style="font-size: 0.85rem; margin-bottom: 8px;">• Figma UI/UX (NSDC)</p>
+                <p style="font-size: 0.85rem;">• MATLAB (MathWorks)</p>
+
+                <!-- Small Compact Resume Button inserted safely inside the sidebar -->
+                <div style="margin-top: 24px;">
+                    <a href="JaiJagannathJenaResume.pdf" target="_blank" class="action-btn btn-border" style="display: inline-flex; width: auto; padding: 8px 16px; font-size: 0.8rem;">
+                        <i class="fas fa-file-pdf"></i> &nbsp; Resume PDF
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT MAIN CONTENT -->
+            <div class="resume-main">
+                <h3>Technical Stack</h3>
+                <div style="margin: 16px 0 32px;">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Firebase</span>
+                    <span class="skill-tag">NoSQL</span>
+                    <span class="skill-tag">Flexbox/Grid</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+                <h3>Executive Summary</h3>
+                <p>
+                    Specializing in Computer Science & Engineering with a focus on full-stack scalability. Currently architecting <strong>Elite Focus OS</strong>, utilizing real-time Firestore sync and modern CSS design systems.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title reveal">Featured Work</h2>
+        <div class="projects-grid">
+            
+            <article class="project-card reveal" onmousemove="handleMouseMove(event, this)">
+                <i class="fas fa-bolt main-icon"></i>
+                <h3>Elite Focus OS</h3>
+                <div class="project-tags"><span>Firebase</span><span>ES6+</span><span>Design System</span></div>
+                <p>Gamified productivity suite inspired by Solo Leveling. Includes XP progression and real-time synchronization.</p>
+                <div class="project-actions">
+                    <a href="https://jai-official.github.io/Elite-Focus-OS/" target="_blank" class="action-btn btn-fill">
+                        <i class="fas fa-external-link-alt"></i> Live Site
+                    </a>
+                    <a href="https://github.com/jai-official/Elite-Focus-OS" target="_blank" class="action-btn btn-border">
+                        <i class="fab fa-github"></i> Source
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card reveal" onmousemove="handleMouseMove(event, this)">
+                <i class="fas fa-briefcase main-icon"></i>
+                <h3>Portfolio Website</h3>
+                <div class="project-tags"><span>Semantic HTML</span><span>CSS3</span><span>Git</span></div>
+                <p>A professional digital identity designed with modern layouts and responsive breakpoints.</p>
+                <div class="project-actions">
+                    <a href="#hero" class="action-btn btn-border">
+                        <i class="fas fa-arrow-up"></i> Currently Viewing
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card reveal" onmousemove="handleMouseMove(event, this)">
+                <i class="fas fa-gamepad main-icon"></i>
+                <h3>Roblox Development</h3>
+                <div class="project-tags"><span>Luau</span><span>3D Studio</span><span>OOP</span></div>
+                <p>Developing immersive 3D multiplayer environments with optimized object-oriented logic.</p>
+                <div class="project-actions">
+                    <span class="badge-locked">
+                        <i class="fas fa-lock"></i> Private Repository
+                    </span>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <footer id="contact" class="reveal">
+        <h2>Connect With Me</h2>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/jai-jagannath-jena-8308a7374/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:jaicodes19@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/jai-official" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // ==========================================
+        // 1. TYPING EFFECT
+        // ==========================================
+        const textElement = document.getElementById('typing-text');
+        const phrases = ["Building Full-Stack Solutions", "UI/UX Design Enthusiast", "Student @ VIT Bhopal"];
+        let pIdx = 0; let charIdx = 0; let isDeleting = false;
+
+        function type() {
+            const current = phrases[pIdx];
+            textElement.textContent = isDeleting ? current.substring(0, charIdx--) : current.substring(0, charIdx++);
+            let speed = isDeleting ? 30 : 70;
+            if (!isDeleting && charIdx > current.length) { speed = 2500; isDeleting = true; }
+            else if (isDeleting && charIdx === 0) { isDeleting = false; pIdx = (pIdx + 1) % phrases.length; speed = 600; }
+            setTimeout(type, speed);
+        }
+        document.addEventListener('DOMContentLoaded', () => type());
+
+        // ==========================================
+        // 2. PROJECT CARD SPOTLIGHT EFFECT
+        // ==========================================
+        function handleMouseMove(e, card) {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        }
+
+        // ==========================================
+        // 3. SCROLL REVEAL ENGINE
+        // ==========================================
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); 
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => revealOnScroll.observe(el));
+
+        // ==========================================
+        // 4. INTERACTIVE NEURAL NETWORK CANVAS
+        // ==========================================
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+        let particlesArray;
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let mouse = { x: null, y: null, radius: 150 };
+
+        window.addEventListener('mousemove', function(event) {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x; this.y = y;
+                this.directionX = directionX; this.directionY = directionY;
+                this.size = size; this.color = color;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+                if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < mouse.radius + this.size) {
+                    if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 2;
+                    if (mouse.x > this.x && this.x > this.size * 10) this.x -= 2;
+                    if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 2;
+                    if (mouse.y > this.y && this.y > this.size * 10) this.y -= 2;
+                }
+                this.x += this.directionX; 
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        function initCanvas() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 1) - 0.5;
+                let directionY = (Math.random() * 1) - 0.5;
+                let color = 'rgba(126, 116, 255, 0.4)'; 
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + 
+                                   ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                    
+                    if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                        opacityValue = 1 - (distance / 10000);
+                        ctx.strokeStyle = 'rgba(126, 116, 255,' + opacityValue + ')';
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateCanvas() {
+            requestAnimationFrame(animateCanvas);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+            connect();
+        }
+
+        window.addEventListener('resize', function() {
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
+            initCanvas();
+        });
+
+        window.addEventListener('mouseout', function() {
+            mouse.x = undefined; 
+            mouse.y = undefined;
+        });
+
+        initCanvas();
+        animateCanvas();
+    </script>
+</body>
+</html>
